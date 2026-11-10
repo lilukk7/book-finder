@@ -3,14 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import NavigationBar from './components/NavigationBar'
 import Explore from './pages/Explore'
 
-function Explore() {
-  return (
-    <div className="container py-5">
-      <h1>Explore Books</h1>
-      <p>What's next?</p>
-    </div>
-  )
-}
+
 
 function BookDetails() {
   return (
