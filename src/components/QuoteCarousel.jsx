@@ -26,7 +26,7 @@ function QuoteCarousel() {
       {quotes.map((item, index) => (
         <Carousel.Item key={index}>
           <div className="text-center py-5 px-4">
-            <p className="fs-3 fst-italic">
+            <p className="fs-5 fst-italic">
               "{item.quote}"
             </p>
             <p className="text-muted mb-0">
