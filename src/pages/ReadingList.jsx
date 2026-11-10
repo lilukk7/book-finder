@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 
+
 function ReadingList() {
   const [savedBooks, setSavedBooks] = useState(() => {
     return JSON.parse(localStorage.getItem('readingList') || '[]')
@@ -38,7 +39,10 @@ function ReadingList() {
 
       <div className="row g-4">
         {savedBooks.map((book) => (
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={book.id}>
+           <div className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column" key={book.id}>
+            <Link
+                to={`/book/${encodeURIComponent(book.id)}?author=${encodeURIComponent(book.author)}&cover=${encodeURIComponent(book.cover || '')}`}
+                className="text-decoration-none text-reset">
             <Card className="h-100 shadow-sm border-0">
               <Card.Img
                 variant="top"
@@ -56,16 +60,16 @@ function ReadingList() {
                 <Card.Text className="text-muted">
                   {book.author}
                 </Card.Text>
-
-                <Button
+              </Card.Body>
+            </Card>
+            </Link>
+            <Button
                   variant="outline-danger"
                   className="mt-auto"
                   onClick={() => handleRemove(book.id)}
                 >
                   Remove from List
-                </Button>
-              </Card.Body>
-            </Card>
+            </Button>
           </div>
         ))}
       </div>
