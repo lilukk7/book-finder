@@ -25,6 +25,32 @@ export async function searchBooks(query) {
   }))
 }
 
+
+
+function cleanDescription(text) {
+  return text
+    // Remove everything starting from "Preceded by:"
+    .replace(/\s*Preceded by:[\s\S]*/i, '')
+
+    // Remove Markdown links, keeping their visible text
+    .replace(/\[([^\]]+)\]\(https?:\/\/[^)]+\)/g, '$1')
+
+    // Remove reference-style links
+    .replace(/\[([^\]]+)\]\[\d+\]/g, '$1')
+
+    // Remove standalone reference markers
+    .replace(/\[\d+\]/g, '')
+
+    // Remove leftover "(source)" text
+    .replace(/\s*\(source\)/gi, '')
+
+    // Clean up extra whitespace
+    .replace(/\n{2,}/g, '\n\n')
+    .trim()
+}
+
+
+
 export async function getBookDetails(workId) {
   const response = await fetch(`${WORKS_URL}/${workId}.json`)
 
@@ -40,9 +66,11 @@ export async function getBookDetails(workId) {
       : data.description?.value ||
         'No description is available for this book yet.'
 
+  const cleanedDescription = cleanDescription(description)
+
   return {
     title: data.title,
-    description,
+    description: cleanedDescription,
     subjects: data.subjects || [],
   }
 }
