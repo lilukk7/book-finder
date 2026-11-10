@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function BookCard({ book }) {
   return (
      <Link
-      to={`/book/${encodeURIComponent(book.id.replace('/works/', ''))}`}
+      to={`/book/${encodeURIComponent(book.id.replace('/works/', ''))}?author=${encodeURIComponent(book.author)}`}
       className="text-decoration-none text-reset"
     >
     <Card className="h-100 shadow-sm border-0">
