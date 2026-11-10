@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
-import { getBookDetails } from '../api/bookApi'
+import { getBookDetails } from '../api services/openLibraryApi.js'
 
 function BookDetails() {
   const { id } = useParams()
