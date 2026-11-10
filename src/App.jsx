@@ -17,6 +17,5 @@ function App() {
     </>
   )
 }
-//añadido la navbar y las rutas para  lista de lectura
 
 export default App
