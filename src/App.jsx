@@ -2,6 +2,7 @@
 import { Routes, Route } from 'react-router-dom'
 import NavigationBar from './components/NavigationBar'
 import Explore from './pages/Explore'
+import BookDetails from './pages/BookDetails'
 
 function ReadingList() {
   return (
