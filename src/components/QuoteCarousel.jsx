@@ -3,19 +3,19 @@ import Carousel from 'react-bootstrap/Carousel'
 
 const quotes = [
   {
-    quote: '"We read books to find out who we are. What other people, real or imaginary, do and think and feel... is an essential guide to our understanding of what we ourselves are and may become',
+    quote: 'We read books to find out who we are. What other people, real or imaginary, do and think and feel... is an essential guide to our understanding of what we ourselves are and may become',
     author: 'Ursula K. Le Guin',
   },
   {
-    quote: '“...I of all people, who ought to have known that books are written only to unite people above and beyond our own brief breath, and so to defend us against the inexorable adversary of all existence: transience and oblivion.”',
-    author: 'Stephen Zweig"',
+    quote: '...I of all people, who ought to have known that books are written only to unite people above and beyond our own brief breath, and so to defend us against the inexorable adversary of all existence: transience and oblivion.”',
+    author: 'Stephen Zweig',
   },
   {
-    quote: '"I meant to write about death, only life came breaking in as usual."',
+    quote: 'I meant to write about death, only life came breaking in as usual.',
     author: 'Virginia Woolf',
   },
   {
-    quote: '"It is what you read when you dont have to that determines what you will be when you cant help it."',
+    quote: 'It is what you read when you dont have to that determines what you will be when you cant help it.',
     author: 'Oscar Wilde',
   },
 ]
