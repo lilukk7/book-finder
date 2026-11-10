@@ -37,8 +37,9 @@ function Explore() {
       </div>
 
     <div className="my-5">
-        <div className="col-md-10 col-lg-8 mx-auto"></div>
+        <div className="mx-auto" style={{ maxWidth: '650px', width: '100%' }}>
         <QuoteCarousel />
+        </div>
     </div>
     {/*Books*/}
     </div>
