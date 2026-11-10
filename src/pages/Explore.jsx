@@ -35,8 +35,9 @@ function Explore() {
 
         </div>
       </div>
-      
+
     <div className="my-5">
+        <div className="col-md-10 col-lg-8 mx-auto"></div>
         <QuoteCarousel />
     </div>
     {/*Books*/}
