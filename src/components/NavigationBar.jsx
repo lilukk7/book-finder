@@ -1,27 +1,32 @@
 import { Link } from 'react-router-dom'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import Container from 'react-bootstrap/Container'
 
 function NavigationBar() {
   return (
-<nav className="navbar navbar-expand-lg bg-light" data-bs-theme="light">
-  
-  <div className="container-fluid">
-     <Link className="navbar-brand" to="/">Book Finder</Link>
-    
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    
-    <div className="collapse navbar-collapse" id="navbarColor03">
-      <ul className="navbar-nav me-auto">
-        <li className="nav-item">
-              <Link className="nav-link" to="/">Explore</Link></li>
-       <li className="nav-item">
-        <Link className="nav-link" to="/favorites">Reading List</Link></li>
-        </ul>   
-    </div>  
-    </div>      
-</nav>      
-    )   
+    <Navbar expand="lg" className="book-navbar">
+      <Container fluid>
+        <Navbar.Brand as={Link} to="/">
+          Book Finder
+        </Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="navbarColor03" />
+
+        <Navbar.Collapse id="navbarColor03">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/">
+              Explore
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/favorites">
+              Reading List
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  )
 }
 
 export default NavigationBar
