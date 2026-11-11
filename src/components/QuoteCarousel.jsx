@@ -22,7 +22,7 @@ const quotes = [
 
 function QuoteCarousel() {
   return (
-    <Carousel indicators={true} controls={true}>
+    <Carousel interval={8000} indicators={true} controls={true}>
       {quotes.map((item, index) => (
         <Carousel.Item key={index}>
           <div className="text-center py-5 px-4">
