@@ -33,7 +33,7 @@ function Explore() {
     <div className="container py-5">
 
       <div className="text-center mb-5">
-        <h1>Find Your Next Read</h1>
+        <h1 className="next-read-heading">Find Your Next Read</h1>
         <p className="lead">
           Discover new stories, explore different literary worlds,
           and find your next favourite author.
