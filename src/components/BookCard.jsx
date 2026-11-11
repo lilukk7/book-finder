@@ -7,8 +7,8 @@ function BookCard({ book }) {
       to={`/book/${encodeURIComponent(book.id.replace('/works/', ''))}?author=${encodeURIComponent(book.author)}&cover=${encodeURIComponent(book.cover || '')}`}
       className="text-decoration-none text-reset"
     >
-    <Card className="h-100 shadow-sm border-0">
-      <Card.Img
+    <Card className="book-card h-100">
+      <Card.Img className="book-card-image"
         variant="top"
         src={
             book.cover ||
@@ -22,7 +22,7 @@ function BookCard({ book }) {
         }}
         />
 
-      <Card.Body>
+      <Card.Body className="book-card-body">
         <Card.Title>{book.title}</Card.Title>
         <Card.Text className="text-muted">
           {book.author}
