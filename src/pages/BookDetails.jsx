@@ -72,7 +72,7 @@ function BookDetails() {
   }
 
   return (
-    <div className="container py-5">
+    <div className="container py-5 book-details-page">
       <div className="row align-items-start g-5">
         <div className="col-md-7">
           <h1>{book.title}</h1>

@@ -7,14 +7,14 @@ import ReadingList from './pages/ReadingList'
 
 function App() {
   return (
-    <> 
+    <div className= "app-background"> 
      <NavigationBar />
     <Routes>
       <Route path="/" element={<Explore />} />
       <Route path="/book/:id" element={<BookDetails />} />
       <Route path="/favorites" element={<ReadingList />} />
     </Routes>
-    </>
+    </div>
   )
 }
 

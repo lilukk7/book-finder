@@ -8,89 +8,144 @@ import { searchBooks } from '../api services/openLibraryApi'
 import { useState } from 'react'
 
 function Explore() {
-    const [searchTerm, setSearchTerm] = useState('')
-    const [books, setBooks] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
+  const [searchTerm, setSearchTerm] = useState('')
+  const [books, setBooks] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-    async function handleSearch(event) {
+  async function handleSearch(event) {
     event.preventDefault()
 
     if (!searchTerm.trim()) return
+
     try {
-        setLoading(true)
-        setError('')
-        const results = await searchBooks(searchTerm)
-        setBooks(results)
+      setLoading(true)
+      setError('')
+      const results = await searchBooks(searchTerm)
+      setBooks(results)
     } catch (error) {
-        setError('Something went wrong. Please try again.')
+      setError('Something went wrong. Please try again.')
     } finally {
-        setLoading(false)
+      setLoading(false)
     }
-    }
+  }
 
   return (
-    <div className="container py-5">
+    <div className="explore-page">
 
-      <div className="text-center mb-5">
-        <h1 className="next-read-heading">Find Your Next Read</h1>
-        <p className="lead">
-          Discover new stories, explore different literary worlds,
-          and find your next favourite author.
-        </p>
-      </div>
+      <section className="hero-section">
+        <div className="container">
+          <div className="row align-items-center g-4">
 
-      <div className="row justify-content-center">
-        <div className="col-md-8 col-lg-6">
+            <div className="col-md-5">
+              <h1 className="hero-title">
+                Find
+                <br />
+                your
+                <br />
+                Next
+                <br />
+                read
+              </h1>
+            </div>
 
-          <Form onSubmit={handleSearch}>
-            <InputGroup>
-                <Form.Control
-                type="search"
-                placeholder="Search by title or author..."
-                aria-label="Search books by title or author"
-                value={searchTerm}
-                onChange={(event) => setSearchTerm(event.target.value)}
+            <div className="col-md-7">
+              <div className="hero-book">
+                <img
+                  src="https://i.pinimg.com/736x/72/c6/7a/72c67af70b9c14f254e4d56125b99873.jpg"
+                  alt="Decorative red vintage book"
                 />
-                <Button variant="primary" type="submit">
-                Search
-                </Button>
-            </InputGroup>
-            </Form>
 
+                <div className="hero-book-text">
+                  Discover new stories, explore different
+                  literary worlds, and find your next
+                  favourite author.
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
+      </section>
 
-    <div className="my-5">
-        <div className="mx-auto" style={{ maxWidth: '650px', width: '100%' }}>
-        <QuoteCarousel />
+      <section className="search-section">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-8 col-lg-7">
+
+              <Form onSubmit={handleSearch}>
+                <InputGroup>
+                  <Form.Control
+                    type="search"
+                    placeholder="Search by title or author..."
+                    aria-label="Search books by title or author"
+                    value={searchTerm}
+                    onChange={(event) =>
+                      setSearchTerm(event.target.value)
+                    }
+                  />
+
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    disabled={loading}
+                  >
+                    {loading ? 'Searching...' : 'Search'}
+                  </Button>
+                </InputGroup>
+              </Form>
+
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <div className="mt-5">
-        {loading && <p className="text-center">Searching for books...</p>}
+      <section className="quote-section">
+        <div
+          className="mx-auto"
+          style={{ maxWidth: '650px', width: '100%' }}
+        >
+          <QuoteCarousel />
+        </div>
+      </section>
 
-        {error && <p className="text-danger text-center">{error}</p>}
+      <section className="container results-section">
+
+        {loading && (
+          <p className="text-center">
+            Searching for books...
+          </p>
+        )}
+
+        {error && (
+          <p className="text-danger text-center">
+            {error}
+          </p>
+        )}
 
         {!loading && books.length > 0 && (
-            <div className="row g-4">
+          <div className="row g-4">
             {books.map((book) => (
-                <div className="col-12 col-sm-6 col-lg-4" key={book.id}>
+              <div
+                className="col-12 col-sm-6 col-lg-4"
+                key={book.id}
+              >
                 <BookCard book={book} />
-                </div>
+              </div>
             ))}
-            </div>
+          </div>
         )}
 
         {!loading && books.length === 0 && (
-            <p className="text-center text-muted">
+          <p className="text-center text-muted">
             Search for a book to discover your next read.
-            </p>
+          </p>
         )}
+
+      </section>
+
     </div>
-  
-</div>
-)
+  )
 }
 
 export default Explore
