@@ -7,7 +7,7 @@ const quotes = [
     author: 'Ursula K. Le Guin',
   },
   {
-    quote: '...I of all people, who ought to have known that books are written only to unite people above and beyond our own brief breath, and so to defend us against the inexorable adversary of all existence: transience and oblivion.”',
+    quote: '...I of all people, who ought to have known that books are written only to unite people above and beyond our own brief breath, and so to defend us against the inexorable adversary of all existence: transience and oblivion.',
     author: 'Stephen Zweig',
   },
   {
