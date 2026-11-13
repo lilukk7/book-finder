@@ -29,6 +29,8 @@
 
 body {
   margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 #root {
@@ -55,19 +57,14 @@ h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+ 
 }
 h2 {
   font-size: 24px;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+ 
 }
 p {
   margin: 0;
@@ -149,19 +146,19 @@ code {
 
 .book-navbar .nav-link:hover,
 .book-navbar .navbar-brand:hover {
-  color: #bb9457;
+  color: var(--border);
 }
 
 .book-navbar .navbar-toggler {
-  border-color: #bb9457;
+  border-color: var(--border);
 }
 .book-navbar .navbar-toggler-icon {
   filter: brightness(0) invert(1);
 }
 
-/* Book card styles */
+/* Book cards */
 .book-card {
-  background-color: #fffaf0;
+  background-color: var(--code-bg);
   border: 1px solid #f1ede6;
   border-radius: 12px;
   overflow: hidden;
@@ -186,36 +183,15 @@ code {
 }
 
 .book-card .card-title {
-  color: #432818;
+  color: var(--text-h);
   font-weight: 600;
   font-size: 1.1rem;
 }
 
 .book-card .card-text {
-  color: #7f4c2e;
+  color:var(--text);
 }
 
-/* App background */
-
-.app-background {
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-}
-
-/* Responsive book covers */
-@media (max-width: 576px) {
-  .book-card-image {
-    height: 220px;
-  }
-  .book-card-body {
-    padding: 14px;
-  }
-  .book-card .card-title {
-    font-size: 1rem;
-  }
-}
 
 
 /* Explore page */
@@ -224,7 +200,7 @@ code {
   min-height: 100vh;
 }
 
-/* Hero section */
+/* book section */
 .hero-section {
   padding: 55px 0;
 }
@@ -234,7 +210,7 @@ code {
   font-size: clamp(4rem, 8vw, 8rem);
   font-weight: bold;
   line-height: 1.05;
-  color: #6f1d1b;
+  color:var(--accent);
   margin: 0;
 }
 
@@ -277,20 +253,9 @@ code {
 }
 
 .search-section .form-control {
-  background-color: #fffaf0;
-  border-color: #bb9457;
+  background-color: var(--code-bg);
+  border-color: var(--border);
   padding: 12px 18px;
-}
-
-.search-section .btn-primary {
-  background-color: #6f1d1b;
-  border-color: #6f1d1b;
-  color: #fff1d0;
-}
-
-.search-section .btn-primary:hover {
-  background-color: #432818;
-  border-color: #432818;
 }
 
 /* Quote carousel */
@@ -304,8 +269,30 @@ code {
   padding-bottom: 50px;
 }
 
+/* Responsive book covers */
+@media (max-width: 576px) {
+  .book-card-image {
+    height: 220px;
+  }
+  .book-card-body {
+    padding: 14px;
+  }
+  .book-card .card-title {
+    font-size: 1rem;
+  }
+}
 
-/* Mobile layout */
+/* different layouts */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
 @media (max-width: 767px) {
   .hero-section {
     padding: 35px 0;
