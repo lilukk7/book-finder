@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
 import { getBookDetails } from '../api services/openLibraryApi.js'
+import { toast } from 'react-toastify'
 import Button from 'react-bootstrap/Button'
 
 function BookDetails() {
@@ -41,7 +42,7 @@ function BookDetails() {
     )
 
     if (alreadySaved) {
-      alert('This book is already in your reading list.')
+      toast.info('This book is already in your reading list.')
       return
     }
 
@@ -60,7 +61,7 @@ function BookDetails() {
       JSON.stringify(savedBooks)
     )
 
-    alert('Book added to your reading list!')
+    toast.success('Book added to your reading list!')
   }
 
   if (loading) {

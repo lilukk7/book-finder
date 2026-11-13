@@ -269,6 +269,23 @@ code {
   padding-bottom: 50px;
 }
 
+/* Notifications */
+.book-toast {
+  background-color: #6f1d1b !important;
+  color: #fff1d0 !important;
+  border: 1px solid #bb9457;
+  border-radius: 10px;
+  font-family: Georgia, serif;
+  box-shadow: 0 4px 12px rgba(67, 40, 24, 0.2);
+}
+
+.book-toast-progress {
+  background: #bb9457 !important;
+}
+.Toastify__toast-icon svg {
+  fill: #bb9457;
+  color: #bb9457;
+}
 /* Responsive book covers */
 @media (max-width: 576px) {
   .book-card-image {

@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 
@@ -17,6 +18,7 @@ function ReadingList() {
 
     setSavedBooks(updatedBooks)
     localStorage.setItem('readingList', JSON.stringify(updatedBooks))
+    toast.success('Book removed from your reading list!')
   }
 
   if (savedBooks.length === 0) {
