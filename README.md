@@ -1,16 +1,89 @@
-# React + Vite
+## Book Finder
+A book discovery platform built with React and Vite, where users can explore books, search by title or author, view book details, and create a personal reading list of their favourite books.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website URL: https://lilukk7.github.io/book-finder/
 
-Currently, two official plugins are available:
+# Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Explore Books:** Browse a collection of books from the Open Library API.
+- **Search:** Find books by title or author.
+- **Book Details:** View book covers, titles, authors, and summaries if available.
+- **Reading List:** Save books to your personal reading list and delete them whenever.
+- **Book Storage:** Saved books will remain in the reading list using browser localStorage.
+- **Responsive Design:** A layout designed to work across different screen sizes.
+- **Notifications:** Receive notifications when adding, removing book or adding already saved books.
 
-## React Compiler
+## Build with: 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- JavaScript
+- React Router
+- React Bootstrap
+- Bootswatch for Litera theme
+- React Icons
+- React Toastify
+- Open Library Search API
+- CSS
 
-## Expanding the ESLint configuration
+## API used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+We used the [Open Library API](https://openlibrary.org/dev/docs/api/search) to retrieve book information, including titles, authors, publication years, summaries and cover images.
+
+## Getting Started
+
+To run this project locally:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR-GITHUB-USERNAME/book-finder.git
+```
+
+### 2. Navigate to the project folder
+
+```bash
+cd book-finder
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal 
+
+## Project Structure
+
+```text
+src/
+├── api services/
+│   └── openLibraryApi.js
+├── components/
+│   ├── NavigationBar.jsx
+│   ├── QuoteCarousel.jsx
+│   └── BookCard.jsx
+├── pages/
+│   ├── Explore.jsx
+│   ├── BookDetails.jsx
+│   └── ReadingList.jsx
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## Reading List Storage
+
+The reading list uses the browser's `localStorage` to save books. Saved books remain available after refreshing the page, as long as the user uses the same browser and hasn't cleared the stored data.
+
+## Author
+
+Created by lilukk7 for Web Programming I course.
+
